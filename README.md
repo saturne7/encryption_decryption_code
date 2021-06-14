@@ -33,8 +33,8 @@ Elle permet de décrypter le message codé à l'inverse de la fonction "crypt".
 
 3/
 La fonction dont la signature est : int verifierMessage(char * message);
-a comme paramètre d'entrée un tableau de caractère avec le message décodé
-et comme paramètre de sortie un entier égal à 0 ou 1 (pas un booléen car sa valeur doit être stockée et non seulement renvoyée).
+a comme paramètre d'entrée un tableau de caractère avec le message d'origine
+et comme paramètre de sortie un entier égal à 0 ou un chiffre > 1 (pas un booléen car sa valeur doit être stockée et non seulement renvoyée).
 Elle permet de vérifier que tous les caractères entrés par l'utilisateur sont bien chiffrables.
 
 
