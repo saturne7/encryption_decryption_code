@@ -39,8 +39,8 @@
 
 // Fonction qui permet de crypter, à l'aide d'une clef, un message donné pour le stocker dans un nouveau tableau.
 // Exemple pour les lettres :
-// Cette fonction transforme les caractères de la table ASCII en chiffres pour pouvoir manipuler les 26 lettres (en majuscules et minuscules)
-// On applique la clef de chiffrement et on enlève la valeur de 'a' dans la table ASCII modulo 26 pour ne pas sortir de l'alphabet
+// Cette fonction transforme les caractères de la table ASCII en chiffres pour pouvoir manipuler les caractères
+// On applique la clef de chiffrement et on enlève la valeur de 'a' dans la table ASCII modulo 128 pour ne pas sortir de la table
 // Cette dernière re-transforme les chiffres en code ASCII pour pouvoir stocker le nouveau caractère
 
 // Cas d'erreur n°1: Lorsque l'on met un seul caractère la fonction d'affichage main affiche de nouveaux caractères qui apparaissent sur un nouvelle ligne
@@ -49,9 +49,9 @@ void crypt(char * message, int key,  char * messageCode){
     int position;
     for(int i = 0; message[i] != '\0'; i++){       
         if((message[i] >= 0) && (message[i] <= 127)){
-            position = (message[i] + key) % 128;   // Retrait de la valeur de 'a' dans la table ASCII pour pouvoir manipuler les 26 lettres de l'alphabet plus facilement
+            position = (message[i] + key) % 128;   
         if(position < 0) position += 128;
-            messageCode[i] = position;   // On ajoute la valeur de 'a' retiré précédement pour retourner au format ASCII et donc pour pouvoir récupérer les caractères   
+            messageCode[i] = position;   
         }
     }
 }
