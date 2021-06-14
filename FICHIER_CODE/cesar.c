@@ -68,7 +68,7 @@ void decrypt(char * messageCode, int key, char * messageOriginel){
 int verifierMessage(char * message){
     int verif = 0;
     for(int i = 0; message[i] != '\0'; i++){
-        if( ((message[i] >= 'a') && (message[i] <= 'z')) || (( message[i] >= 'A') && (message[i] <= 'Z')) || (message[i] >= ' ' && message[i] <= '@') || (message[i] >= '[' && message[i] <= '`') || (message[i] >= '{' && message[i] <= '~') || message[i] == '\n'){
+        if((message[i] >= 0) && (message[i] <= 127)){
             verif += 0;
         } else {
             verif += 1;
